@@ -1,0 +1,123 @@
+:root {
+  --orange-color: rgb(255, 115, 0);
+  --background: rgb(35, 35, 49);
+}
+a {
+  text-decoration: none;
+}
+.Navbar {
+  background-color: var(--background);
+  color: white;
+  padding: 1.5%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.Navbar > h1 > a {
+  cursor: pointer;
+  color: white;
+}
+.Navbar > h1 > a > span {
+  color: var(--orange-color);
+}
+.Search {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 40%;
+}
+.Search > select {
+  background-color: var(--orange-color);
+  color: white;
+  font-size: medium;
+  padding: 1.9%;
+  cursor: pointer;
+  border-radius: 5px 0px 0px 5px;
+  text-overflow: ellipsis;
+  border: none;
+  outline: none;
+  width: 30%;
+}
+.Search > select > option,
+.Search > input {
+  background-color: white;
+  color: black;
+  border: none;
+  outline: none;
+  text-overflow: ellipsis;
+}
+.Search > input {
+  font-size: medium;
+  padding: 2% 3.5%;
+  border-radius: 0px 5px 5px 0px;
+  width: 70%;
+}
+.Navbar > p > a,
+.SideMenu > p {
+  font-size: larger;
+  cursor: pointer;
+  color: white;
+}
+.Navbar > p > a > span {
+  font-weight: bold;
+  color: var(--orange-color);
+}
+.Navbar > p > a:hover,
+.SideMenu > p:hover {
+  color: var(--orange-color);
+}
+.Navbar > button,
+.SideMenu > button {
+  /* width: 6.8%; */
+  font-size: medium;
+  padding: 0.5% 1%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: white;
+}
+.SideMenu {
+  background-color: rgb(225, 225, 225);
+  width: 80%;
+  position: relative;
+  left: 20%;
+  text-align: left;
+  font-size: larger;
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1475px) {
+  .Navbar > button {
+    padding: 0.4% 1%;
+  }
+  .Search {
+    width: 37%;
+  }
+  .Navbar > h1 > a {
+    font-size: 100%;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 999px) {
+  .Navbar > button {
+    display: none;
+  }
+  .Search {
+    width: 35%;
+  }
+  .Navbar > h1 > a {
+    font-size: 95%;
+  }
+}
+@media screen and (min-width: 380px) and (max-width: 799px) {
+  .Navbar > p > a {
+    display: none;
+  }
+  .Navbar > button {
+    display: none;
+  }
+  .Search {
+    width: 45%;
+  }
+  .Navbar > h1 > a {
+    font-size: 95%;
+  }
+}
