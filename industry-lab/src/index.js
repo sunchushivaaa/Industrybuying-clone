@@ -4,17 +4,20 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import AuthContextProvider from "./Context/AuthContext";
-import ModeContextProvider from "./Context/ModeContext";
+import AuthContextProvider from "./Components/Context/AuthContext";
+import ModeContextProvider from "./Components/Context/ModeContext";
+import LoadingContextProvider from "./Components/Context/LoadingContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <ModeContextProvider>
-    <AuthContextProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </AuthContextProvider>
+    <LoadingContextProvider>
+      <AuthContextProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </AuthContextProvider>
+    </LoadingContextProvider>
   </ModeContextProvider>
 );
 
