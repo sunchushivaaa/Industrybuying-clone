@@ -6,6 +6,11 @@ a {
   text-decoration: none;
 }
 .Navbar {
+  position: sticky;
+  top: 0;
+  margin-bottom: 3%;
+}
+.Navbar {
   background-color: var(--background);
   color: white;
   padding: 1.5%;
@@ -84,7 +89,19 @@ a {
   text-align: left;
   font-size: larger;
 }
-
+.Coupon {
+  padding: 0.5% 1.5%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(227, 227, 227);
+}
+.Coupon > h3 > span {
+  color: var(--orange-color);
+  cursor: pointer;
+  font-size: larger;
+  text-decoration: underline;
+}
 @media screen and (min-width: 1000px) and (max-width: 1475px) {
   .Navbar > button {
     padding: 0.4% 1%;
