@@ -3,6 +3,7 @@ import AllRoutes from "./AllRoutes/AllRoutes";
 import "./App.css";
 import Navbar from "./Components/Navbar";
 import { ModeContext } from "./Components/Context/ModeContext";
+import Footer from "./Components/Footer";
 function App() {
   const { mode } = useContext(ModeContext);
   return (
@@ -12,6 +13,7 @@ function App() {
     >
       <Navbar />
       <AllRoutes />
+      <Footer />
     </div>
   );
 }

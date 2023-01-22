@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "../Components/Styles/Signin.module.css";
 
 const formState = {
   name: "",
@@ -15,11 +16,13 @@ export default function SigninPage() {
     e.preventDefault();
     if (data.name !== "" && data.email !== "" && data.password !== "") {
       console.log(data);
+    } else {
+      alert("Fill All Credentials");
     }
   };
   return (
-    <div className="SigninPage">
-      <h1>Enter Your Credentials</h1>
+    <div className={styles.SigninPage}>
+      <h2>Enter Your Credentials</h2>
       <form onSubmit={submitHandler}>
         <input
           type="text"
@@ -39,7 +42,7 @@ export default function SigninPage() {
           name="password"
           onChange={(e) => inputHandler(e)}
         />
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Sign in" />
       </form>
     </div>
   );
