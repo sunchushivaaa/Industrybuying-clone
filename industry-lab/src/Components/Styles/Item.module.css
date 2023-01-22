@@ -4,3 +4,83 @@
   --dark-background: rgb(59, 59, 71);
   --grey-color: rgb(218, 218, 218);
 }
+.Item {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-bottom: 3%;
+}
+.Container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 3%;
+}
+.Container > .Product {
+  grid-area: 1/1/1/3;
+}
+.Container > .Product > img {
+  width: 100%;
+  float: left;
+  height: 250px;
+  object-fit: contain;
+}
+.Container > .Add {
+  text-align: left;
+  grid-area: 1/3/1/4;
+}
+.Add > p {
+  font-size: 1.6rem;
+  margin-bottom: 3%;
+  color: var(--orange-color);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.Add > ul {
+  margin-bottom: 5%;
+}
+.Add > ul > li {
+  font-size: 1.2rem;
+  margin-bottom: 1.2%;
+  letter-spacing: 1px;
+}
+.Add > h2 {
+  color: var(--orange-color);
+  letter-spacing: 2.5px;
+  margin-bottom: 5%;
+}
+.Add > .Quantity {
+  width: 250px;
+  margin-bottom: 8%;
+}
+.Add > .Quantity > button {
+  font-size: 1.5rem;
+  padding: 2% 6%;
+  border: none;
+  cursor: pointer;
+  margin-right: 2%;
+}
+.Add > .Quantity > button:nth-child(2) {
+  background: transparent;
+  color: black;
+  cursor: auto;
+  font-size: 1.2rem;
+}
+.Add > .Buttons {
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Add > .Buttons > button {
+  font-size: larger;
+  padding: 5%;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.Add > .Buttons > button:first-child {
+  background-color: var(--orange-color);
+}
+.Add > .Buttons > button:last-child {
+  background-color: green;
+}
