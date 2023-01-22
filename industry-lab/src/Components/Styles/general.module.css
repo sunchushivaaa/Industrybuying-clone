@@ -96,11 +96,45 @@ a {
   align-items: center;
   background-color: rgb(227, 227, 227);
 }
-.Coupon > h3 > span {
+.Coupon > h3 > a > span {
   color: var(--orange-color);
   cursor: pointer;
   font-size: larger;
   text-decoration: underline;
+}
+.Footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 2% 3%;
+  background-color: var(--background);
+  color: white;
+}
+.Footer > div > b {
+  font-size: 1.3rem;
+}
+.Footer > div > p {
+  font-size: 1rem;
+  margin-top: 5%;
+  cursor: pointer;
+}
+.Footer > div > p:hover {
+  color: var(--orange-color);
+}
+.Footer > div > input {
+  margin-top: 5%;
+  font-size: medium;
+  padding: 2% 4%;
+  text-overflow: ellipsis;
+  width: 65%;
+  border: none;
+  outline: none;
+}
+.Footer > div > button {
+  color: white;
+  background-color: var(--orange-color);
+  cursor: pointer;
+  font-size: medium;
+  padding: 2% 4%;
 }
 @media screen and (min-width: 1000px) and (max-width: 1475px) {
   .Navbar > button {

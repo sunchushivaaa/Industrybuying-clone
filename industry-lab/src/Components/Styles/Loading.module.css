@@ -12,13 +12,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(64, 64, 64, 0.189);
+  background-color: rgba(88, 88, 88, 0.482);
 }
 .Loading > h2 {
-  color: var(--background);
+  color: white;
   font-size: 2rem;
   opacity: 1;
-  animation: loading 1.5s ease-in-out infinite;
+  animation: loading 1.2s ease-in-out infinite;
 }
 .Loading > h2 > span {
   color: var(--orange-color);
