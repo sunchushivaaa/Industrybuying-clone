@@ -2,8 +2,21 @@
   --orange-color: rgb(255, 115, 0);
   --background: rgb(35, 35, 49);
 }
+.Loading {
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(64, 64, 64, 0.189);
+}
 .Loading > h2 {
   color: var(--background);
+  font-size: 2rem;
   opacity: 1;
   animation: loading 1.5s ease-in-out infinite;
 }

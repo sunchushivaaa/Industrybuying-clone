@@ -15,6 +15,20 @@ export default function Navbar() {
   const selectHandler = (e) => {
     setCategory(e.target.value);
   };
+  const clickHandler = async () => {
+    setMode(!mode);
+    // const request = await fetch(
+    //   "https://industry-lab-backend.onrender.com/information",
+    //   {
+    //     method: "PUT",
+    //     body: JSON.stringify({ mode: mode }),
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //   }
+    // );
+    // const response = await request.json();
+  };
   return (
     <>
       <Coupon />
@@ -62,9 +76,7 @@ export default function Navbar() {
             Cart <span>{initialState.cart.length}</span>
           </Link>
         </p>
-        <button onClick={() => setMode(!mode)}>
-          {mode ? "Dark" : "Light"}
-        </button>
+        <button onClick={clickHandler}>{mode ? "Dark" : "Light"}</button>
       </div>
     </>
   );

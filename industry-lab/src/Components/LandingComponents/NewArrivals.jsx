@@ -2,10 +2,12 @@ import { useContext, useEffect, useState } from "react";
 import styles from "../Styles/Landing.module.css";
 import { ModeContext } from "../Context/ModeContext";
 import { LoadingContext } from "../Context/LoadingContext";
+import Loading from "../LoadingComponent/Loading";
+import { Link } from "react-router-dom";
 
 export default function NewArrivals() {
   const { mode } = useContext(ModeContext);
-  const { setLoading } = useContext(LoadingContext);
+  const { loading, setLoading } = useContext(LoadingContext);
   const [data, setData] = useState([{}]);
   useEffect(() => {
     getData();
@@ -19,31 +21,39 @@ export default function NewArrivals() {
     setData(response);
     setLoading(false);
   };
-  return (
-    <div
-      className={styles.NewArrivals}
-      style={mode ? { backgroundColor: "rgb(59, 59, 71)" } : {}}
-    >
-      <h2 style={mode ? { color: "white" } : {}}>
-        New <span>Arrivals</span>
-      </h2>
+  if (loading) {
+    return <Loading />;
+  } else {
+    return (
       <div
-        className={styles.DataDiv}
-        style={mode ? { backgroundColor: "transparent" } : {}}
+        className={styles.NewArrivals}
+        style={mode ? { backgroundColor: "rgb(59, 59, 71)" } : {}}
       >
-        {data?.map((el) => {
-          return (
-            <div
-              key={el.id}
-              style={mode ? { backgroundColor: "white", color: "black" } : {}}
-            >
-              <img src={el.image} alt={el.name} />
-              <p>{el.name}</p>
-              <h5>by {el.brand}</h5>
-            </div>
-          );
-        })}
+        <h2 style={mode ? { color: "white" } : {}}>
+          New <span>Arrivals</span>
+        </h2>
+        <div className={styles.DataDiv}>
+          {data?.map((el) => {
+            return (
+              <Link
+                key={`${el.id}+${el.type}`}
+                to={`/${el.type}/${el.id}`}
+                style={mode ? { backgroundColor: "white" } : {}}
+              >
+                <div
+                  style={
+                    mode ? { backgroundColor: "white", color: "black" } : {}
+                  }
+                >
+                  <img src={el.image} alt={el.name} />
+                  <p>{el.name}</p>
+                  <h5>by {el.brand}</h5>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
