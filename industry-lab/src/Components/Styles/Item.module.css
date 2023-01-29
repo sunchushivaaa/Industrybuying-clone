@@ -8,7 +8,7 @@
   width: 80%;
   margin: auto;
   text-align: center;
-  padding-bottom: 3%;
+  padding-bottom: 5%;
 }
 .Container {
   display: grid;
@@ -83,4 +83,23 @@
 }
 .Add > .Buttons > button:last-child {
   background-color: green;
+}
+.Add > .Availability {
+  margin-bottom: 8%;
+}
+.Add > .Availability > input::-webkit-outer-spin-button,
+.Add > .Availability > input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.Add > .Availability > input {
+  padding: 1% 2%;
+  margin-right: 2%;
+  font-size: medium;
+}
+.Add > .Availability > button {
+  background-color: var(--background);
+  color: white;
+  font-size: medium;
+  padding: 1.1% 2%;
+  cursor: pointer;
 }

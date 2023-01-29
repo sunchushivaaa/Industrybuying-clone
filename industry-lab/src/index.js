@@ -7,21 +7,20 @@ import { BrowserRouter } from "react-router-dom";
 import AuthContextProvider from "./Components/Context/AuthContext";
 import ModeContextProvider from "./Components/Context/ModeContext";
 import LoadingContextProvider from "./Components/Context/LoadingContext";
-import { store } from "./Reducer/store";
-import { Provider } from "react-redux";
+import CartContextProvider from "./Components/Context/CartContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <ModeContextProvider>
-    <LoadingContextProvider>
-      <AuthContextProvider>
-        <BrowserRouter>
-          <Provider store={store}>
+    <CartContextProvider>
+      <LoadingContextProvider>
+        <AuthContextProvider>
+          <BrowserRouter>
             <App />
-          </Provider>
-        </BrowserRouter>
-      </AuthContextProvider>
-    </LoadingContextProvider>
+          </BrowserRouter>
+        </AuthContextProvider>
+      </LoadingContextProvider>
+    </CartContextProvider>
   </ModeContextProvider>
 );
 

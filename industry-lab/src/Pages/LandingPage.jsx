@@ -1,3 +1,4 @@
+import Banner from "../Components/LandingComponents/Banner";
 import BestSellers from "../Components/LandingComponents/BestSellers";
 import Cleaning from "../Components/LandingComponents/Cleaning";
 import Instruments from "../Components/LandingComponents/Instruments";
@@ -7,6 +8,7 @@ import PowerTools from "../Components/LandingComponents/PowerTools";
 export default function LandingPage() {
   return (
     <div className="LandingPage">
+      <Banner />
       <BestSellers />
       <NewArrivals />
       <Cleaning />
