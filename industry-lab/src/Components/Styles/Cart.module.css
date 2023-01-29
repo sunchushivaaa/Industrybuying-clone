@@ -1,0 +1,56 @@
+:root {
+  --orange-color: rgb(255, 115, 0);
+  --background: rgb(35, 35, 49);
+  --dark-background: rgb(59, 59, 71);
+  --grey-color: rgb(218, 218, 218);
+}
+.Header {
+  margin-left: 6%;
+  margin-bottom: 5%;
+}
+.CartPage {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 5%;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+.CartPage > div {
+  border: 1px solid var(--orange-color);
+  padding: 3% 1%;
+}
+.CartPage > div > p {
+  margin-bottom: 1%;
+}
+.CartPage > div > h3 {
+  margin-top: 3%;
+  margin-bottom: 5%;
+}
+.CartPage > div > img {
+  width: 100%;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 3%;
+}
+.CartPage > div > .Quantity {
+  margin-bottom: 5%;
+}
+.CartPage > div > .Quantity > button {
+  font-size: medium;
+  padding: 2% 5%;
+  cursor: pointer;
+  margin-right: 1%;
+}
+.CartPage > div > .Quantity > button:nth-child(2) {
+  border: none;
+  font-weight: bold;
+  cursor: auto;
+  background-color: transparent;
+}
+.CartPage > div > button {
+  font-size: small;
+  padding: 2% 4%;
+  cursor: pointer;
+}

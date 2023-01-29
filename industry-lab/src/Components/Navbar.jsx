@@ -3,12 +3,13 @@ import { useState } from "react";
 import Coupon from "./Coupon";
 import styles from "./Styles/General.module.css";
 import { ModeContext } from "./Context/ModeContext";
-import { initialState } from "../Reducer/reducer";
+import { CartContext } from "./Context/CartContext";
 import { Link } from "react-router-dom";
 export default function Navbar() {
   const [search, setSearch] = useState("");
   const [setCategory] = useState("");
   const { mode, setMode } = useContext(ModeContext);
+  const { cart } = useContext(CartContext);
   const inputHandler = (e) => {
     setSearch(e.target.value);
   };
@@ -73,7 +74,7 @@ export default function Navbar() {
         </p>
         <p>
           <Link to="/cart">
-            Cart <span>{initialState.cart.length}</span>
+            Cart <span>{cart.length}</span>
           </Link>
         </p>
         <button onClick={clickHandler}>{mode ? "Dark" : "Light"}</button>

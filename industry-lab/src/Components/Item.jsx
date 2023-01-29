@@ -4,10 +4,8 @@ import { ModeContext } from "./Context/ModeContext";
 import { useParams } from "react-router-dom";
 import { LoadingContext } from "./Context/LoadingContext";
 import Loading from "./LoadingComponent/Loading";
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { ADD, UPDATE, DELETE } from "../Reducer/actions";
-import { store } from "../Reducer/store";
+import { CartContext } from "./Context/CartContext";
+// import { Link } from "react-router-dom";
 
 export default function Item() {
   const { mode } = useContext(ModeContext);
@@ -15,7 +13,9 @@ export default function Item() {
   const [data, setData] = useState([{}]);
   const { loading, setLoading } = useContext(LoadingContext);
   const [quantity, setQuantity] = useState(1);
-  const dispatch = useDispatch();
+  const [check, setCheck] = useState(true);
+  const [pin, setPin] = useState("");
+  const { pushCart } = useContext(CartContext);
 
   useEffect(() => {
     getData(type, id);
@@ -29,6 +29,9 @@ export default function Item() {
     const response = await request.json();
     setData(response);
     setLoading(false);
+  };
+  const inputHandler = (e) => {
+    setPin(Number(e.target.value));
   };
   if (loading) {
     return <Loading />;
@@ -65,16 +68,55 @@ export default function Item() {
                 +
               </button>
             </div>
-            <div className={styles.Buttons}>
+            <div className={styles.Availability}>
+              <input
+                type="number"
+                placeholder="Enter pincode"
+                onChange={(e) => inputHandler(e)}
+                value={pin}
+              />
               <button
                 onClick={() => {
-                  dispatch(ADD({ ...data, quantity: quantity }));
-                  console.log(store);
+                  if (pin === 400017) {
+                    setCheck(!check);
+                    alert("Product is available for this pincode");
+                    setPin("");
+                  } else {
+                    alert("Not available for this pincode");
+                  }
+                }}
+              >
+                Check
+              </button>
+              <br />
+              <b>*try 400017</b>
+            </div>
+            <div className={styles.Buttons}>
+              <button
+                style={check ? { cursor: "not-allowed" } : {}}
+                onClick={(e) => {
+                  if (check) {
+                    alert("Check for your pincode");
+                  } else {
+                    console.log(data);
+                    pushCart({ ...data, quantity: quantity });
+                  }
                 }}
               >
                 Add to Cart
               </button>
-              <button>Buy Now</button>
+              <button
+                style={check ? { cursor: "not-allowed" } : {}}
+                onClick={(e) => {
+                  if (check) {
+                    alert("Check for your pincode");
+                  } else {
+                    console.log(data);
+                  }
+                }}
+              >
+                Buy Now
+              </button>
             </div>
           </div>
         </div>

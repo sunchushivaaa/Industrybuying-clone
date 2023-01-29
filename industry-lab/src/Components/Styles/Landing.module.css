@@ -55,3 +55,80 @@
   font-size: small;
   margin-bottom: 3%;
 }
+.Banner {
+  width: 50%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 15px;
+  /* border: 1px solid black; */
+}
+.Banner > .Carousel {
+  grid-area: 1/1/3/4;
+  position: relative;
+  z-index: 0;
+}
+.Banner > .Carousel > img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  cursor: pointer;
+}
+.Banner > .Carousel > .Buttons {
+  position: absolute;
+  top: 330px;
+  width: 20%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.Banner > .Carousel > .Buttons > button {
+  font-size: medium;
+  padding: 4%;
+  border: 1px solid var(--background);
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
+  background: transparent;
+  transition: all ease-out 0.5s;
+}
+.Banner > .Number {
+  grid-area: 1/4/1/5;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  /* color: rgb(212, 212, 212); */
+  padding: 8% 8%;
+}
+.Banner > .Number > p {
+  text-align: justify;
+  font-size: medium;
+  margin-bottom: 6%;
+}
+.Banner > .Number > form > input::-webkit-outer-spin-button,
+.Banner > .Number > form > input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.Banner > .Number > form > input {
+  outline: none;
+  padding: 4%;
+  margin-bottom: 3%;
+}
+.Banner > .Number > form > input:last-child {
+  background-color: var(--orange-color);
+  color: white;
+  cursor: pointer;
+  border: none;
+  padding: 3%;
+}
+.Banner > .Gif {
+  grid-area: 2/4/3/5;
+}
+.Banner > .Gif > img {
+  width: 100%;
+}
+.Banner > .Flex {
+  grid-area: 3/1/5/5;
+}
+.Banner > .Flex > img {
+  width: 100%;
+}
