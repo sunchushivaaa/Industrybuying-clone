@@ -3,7 +3,7 @@
  <h2>Industrybuying.com is a leading Business e-commerce platform</h2> 
  
  <h3>An Individual project planned and executed within 4 days.
- All functionalities on this project are achieved using redux, react-router-dom, react-redux, etc</h3> 
+ All functionalities on this project are achieved using redux, react-router-dom, react-redux, etc.</h3> 
  
  <div>
  <h3>Tech Stack Used:</h3>
@@ -32,11 +32,11 @@
  </li>
  <li>
  <h3>Category Page</h3>
- <img src = "https://user-images.githubusercontent.com/110079977/226098026-52fc6138-07a6-4983-a1a2-e4a578782fad.png" alt = "Industrybuying-Category"/>
+ <img src = "https://user-images.githubusercontent.com/110079977/226099163-574efd55-e604-48d3-bdd4-4644b956c5bb.png" alt = "Industrybuying-Category"/>
  </li>
  <li>
  <h3>Product detail Page</h3>
- <img src = "https://user-images.githubusercontent.com/110079977/226098092-01cd8b23-b67b-45be-ae94-fce18927c8c1.png" alt = "Industrybuying-Product"/>
+ <img src = "https://user-images.githubusercontent.com/110079977/226099167-20b64d96-954b-4d39-9452-3a3c370e7cc2.png" alt = "Industrybuying-Product"/>
  </li>
  </ul>
  
